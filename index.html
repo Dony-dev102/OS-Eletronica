@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cadastro de OS</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<h1 class="header-principal">Sistema de Ordem de Serviço</h1>
+
+
+<div class="container">
+
+<!-- CADASTRO -->
+<div class="card">
+<h2>Nova OS</h2>
+
+<input type="text" id="numero" placeholder="Número da OS"><br><br>
+<input type="number" id="valorTotal" placeholder="Valor Total" step="0.01"><br><br>
+
+<select id="status">
+  <option value="orçamento">Orçamento</option>
+  <option value="aprovado">Aprovado</option>
+  <option value="aguardando peça">Aguardando Peça</option>
+  <option value="pintando">Pintando</option>
+  <option value="pronto">Pronto</option>
+  <option value="finalizada">Finalizada</option>
+</select><br><br>
+
+<input type="date" id="data" style="display:none;"><br><br>
+
+<h3>Peças</h3>
+<div class="peca"><label><input type="checkbox" class="checkPeca" data-nome="Capacitor"> Capacitor</label><input type="number" class="valorPeca" disabled step="0.01"></div>
+<div class="peca"><label><input type="checkbox" class="checkPeca" data-nome="Fusível"> Fusível</label><input type="number" class="valorPeca" disabled step="0.01"></div>
+<div class="peca"><label><input type="checkbox" class="checkPeca" data-nome="Chave"> Chave</label><input type="number" class="valorPeca" disabled step="0.01"></div>
+<div class="peca"><label><input type="checkbox" class="checkPeca" data-nome="Mag Novo"> Mag Novo</label><input type="number" class="valorPeca" disabled step="0.01"></div>
+<div class="peca"><label><input type="checkbox" class="checkPeca" data-nome="Mag Recon"> Mag Recon</label><input type="number" class="valorPeca" disabled step="0.01"></div>
+<div class="peca"><label><input type="checkbox" class="checkPeca" data-nome="Pintura"> Pintura</label><input type="number" class="valorPeca" disabled step="0.01"></div>
+<div class="peca"><label><input type="checkbox" class="checkPeca" data-nome="Membrana"> Membrana</label><input type="number" class="valorPeca" disabled step="0.01"></div>
+
+<br>
+<strong>Mão de Obra:</strong> <span id="maoObra">R$ 0,00</span><br>
+<strong>Comissão (%):</strong> <span id="comissao">R$ 0,00</span><br><br>
+
+<button id="salvar">Salvar OS</button>
+</div>
+
+<!-- FILTRO POR STATUS -->
+<div class="card">
+<h2>Buscar por Status</h2>
+<select id="filtroStatus">
+  <option value="todos">Todos</option>
+  <option value="aprovado">Aprovado</option>
+  <option value="finalizada">Finalizada</option>
+  <option value="pendente">Pendente</option>
+</select>
+<button id="buscarStatus">Buscar</button>
+</div>
+
+<!-- BALANÇO -->
+<div class="card">
+<h2>Lucro Técnico por Período</h2>
+<label>Data Início</label><input type="date" id="dataInicio">
+<label>Data Fim</label><input type="date" id="dataFim">
+<button id="btnCalcular">Calcular</button>
+<p id="lucroTotal">Lucro Técnico: R$ 0,00</p>
+</div>
+
+<!-- LISTA -->
+<div class="card">
+<h2>Lista de OS</h2>
+<div id="lista"></div>
+</div>
+
+</div>
+
+<footer class="footer-assinatura">
+  <p>© 2026 <strong>Dony_Dev</strong> | Full Stack Developer<span class="cursor">_</span></p>
+</footer>
+
+<script src="app.js"></script>
+</body>
+</html>
