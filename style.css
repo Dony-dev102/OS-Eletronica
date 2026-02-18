@@ -4,7 +4,7 @@ body {
   max-width: 900px;
   margin: auto;
   background: 
-    url('background.jpg') no-repeat center center fixed; /* imagem de fundo */
+    url('https://github.com/Dony-dev102/OS-Eletronica/blob/main/background/background.jpg') no-repeat center center fixed; /* imagem de fundo */
   background-size: cover; /* cobre toda a tela */
   color: #191818; /* cor padrão do texto */
   padding: 10px;
